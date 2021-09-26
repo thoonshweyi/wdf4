@@ -1,0 +1,71 @@
+
+:root{
+	--oc: orange;
+	--rdcolor: red;   
+	--gn: green;
+	--vi: rgba(92,37,127,1.00);          ;                         
+}
+.div1{
+	width: 100px;
+	height: 80px;
+	background-color: var(--rdcolor);
+
+	transform: rotate(90deg);
+}
+.div2{
+	width: 200px;
+	height: 80px;
+	background-color: var(--gn);
+	transform: rotate(50deg);
+}
+.div3{
+	width: 200px;
+	height: 80px;
+	background-color: var(--oc);
+	transform: rotateX(50deg);/*အပေါ် အောင် ကျုံ့
+	*/
+}
+.div4{
+	width: 200px;
+	height: 80px;
+	background-color: var(--oc);
+	transform: rotateY(50deg);/*ဘယ်ညာ ကျုံ့*/
+}
+.div5{
+	width: 200px;
+	height: 80px;
+	background-color: var(--oc);
+	transform: scale(0.5);
+}
+.country{
+	font-size: 16px;
+
+	/*Vendor Prefix properties*/ /*Browser တစ်ခုနဲ့တစ်ခုမတူတဲ့ properties*/
+	-webkit-appearance: none; /*Chrome Safri and Opera -o- , Internet Explore -ms-*/
+	-moz-apperance: none; /*Mozila-Firefox*/
+	
+	appearance: none;/*arrow ကိုဖျောက်*/ 
+
+	padding: 10px 25px 10px 10px;
+	background-image: url(https://pixy.org/src/84/849539.png);
+	background-size: 15px;
+	background-repeat: no-repeat;
+	background-position: right;
+	background-position-x: 90%; /*x ၀င်ရိုးကိုနေရာရွေ့ချင်လို့*/
+}
+h1{
+	text-align: center;
+}
+p.text{
+	text-align: center;
+	color: red;
+}
+@media(max-width:800px){/*0px to 800px screensize will do the following code otherwise will do upper code*/
+	h1{
+		font-size: 25px;
+		color: blue;
+	}
+	p.text{
+		color: blue;
+	}
+}

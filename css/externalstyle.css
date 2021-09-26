@@ -1,0 +1,35 @@
+/*Selectors
+Element Selector
+
+Single Selector
+Group Selectors*/
+
+p{
+	color:red;
+}
+
+/*Group Selector(,)*/
+h1,h2,h3,h4{
+	color:blue;
+}
+
+
+/*ID Selector*/
+#myself,#sakasa{
+	color:red;
+}
+
+/*Class Selector*/
+.ph{
+	color:blue;
+}
+
+
+.f20{
+	font-size: 20px;
+}
+
+
+.divone,.divtwo{
+	color:violet;
+}

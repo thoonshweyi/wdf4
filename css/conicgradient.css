@@ -1,0 +1,130 @@
+.container .circle1{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+
+	background: conic-gradient(
+		yellow,
+		red,
+		green,
+		pink
+	);
+}
+
+.container .circle2{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+
+	background: conic-gradient(
+		#bf42f5,
+		#42f57e,
+		#f5d442
+	);
+}
+.container .circle3{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+
+	background: conic-gradient(
+		rgba(160,73,127,1.00),
+		rgba(37,4,127,1.00),
+		rgba(66,203,127,1.00)
+	);
+}
+.container .circle4{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+
+	background: conic-gradient(
+		yellow 30%,
+		red 0 50%,
+		green 0 90%,
+		pink 0 100%
+	);
+}
+.containertwo{
+	width: 300px;
+	height: 300px;
+	/*background-color: green;*/
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+	margin: auto;
+}
+.containertwo .c1{
+	width: 300px;
+	height: 300px;
+	background-color: black;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 2;
+}
+
+.containertwo .c2{
+	width: 320px;
+	height: 320px;
+	/*background:  linear-gradient(
+		90deg,
+		red,
+		blue
+	);*/
+	background: conic-gradient(
+		red 0,
+		green 25%,
+		red 0,
+		blue 70%,
+		red 0,
+		yellow 100%
+	);
+	border-radius: 50%;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	z-index: 1;
+}
+p{
+	color: red;
+	z-index: 3;
+	/*margin-left: 400px;*/
+}
+.pointer{
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	display: block;
+
+	border-radius: 50%;
+}
+.pointer-container{
+	width: 20px;
+	height: 200px;
+	/*background-color: gray;*/
+	
+	z-index: 4;
+
+	position: absolute;
+	top: -40px;  /*let the pointer container at center of circles(
+	the width of pointer container is 40 percent greater than the radius of circle so the extra width
+	is sent outside of circle)*/
+
+
+	animation-name: myrotate;
+	animation-duration: 7s;
+	transform-origin: bottom;/*annimation start at the bottom of the element*/
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+@keyframes myrotate{
+	from{
+		transform: rotate(0deg);/*လှည့်ဖို့အတွက်ပေးတာ*/
+	}
+	to{
+		transform: rotate(360deg);
+	}
+}

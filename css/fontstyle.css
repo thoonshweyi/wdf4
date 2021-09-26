@@ -1,0 +1,126 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');*/
+
+
+/*Local Machine Integrate*/
+/*body{
+	font-family:Arial,Century,"Times New Roman";
+}
+*/
+
+
+/*Google Font Local Integrate*/
+@font-face{
+	font-family:efg;
+	src:local('Stick-Regular'),url(../libs/fonts/stick/Stick-Regular.ttf) format('woff');
+}
+
+@font-face{
+	font-family:'AkayaTelivigala-Regular';
+	src:local('AkayaTelivigala-Regular'),url(../libs/fonts/akayatelivigala/AkayaTelivigala-Regular.ttf) format('woff');
+}
+
+
+.p1{
+	font-family:'efg';
+}
+
+
+.p2{
+	font-family:'AkayaTelivigala-Regular';
+}
+
+
+.p3{
+	font-family: Arial,Century;
+
+	/*font-weight:bold;*/
+		/*100 to 900*/
+	/*font-weight:600;*/
+
+	/*font-style:italic;*/
+
+
+	/*Text Indentation*/
+	text-indent:50px;
+
+	/*text-transform:uppercase;*/
+	/*text-transform: lowercase;*/
+	/*text-transform:capitalize;*/
+
+	font-variant: small-caps;
+
+}
+
+
+.a1{
+	text-decoration: none;
+	/*color:green;*/
+}
+
+.a1:visited{
+	color:red;
+}
+
+.a1:hover{
+	color:blue;
+	font-size: 20px;
+}
+
+
+
+/*Font Integrate*/
+/*1.Local Machine
+2.Global Font (Google Api Fonts) 1.CDN Integrate , 2.Local Integrate
+*/
+
+
+
+
+
+.menutext{
+	font-family: Cambria;
+	text-decoration:none;
+	background-color:green;
+	color:#fff;
+
+	/*padding:10px;*/
+			/*top&bottom  left&right*/
+	/*padding:10px 20px;*/
+
+	padding-top:10px;
+	padding-bottom: 10px;
+	padding-left:20px;
+	padding-right: 20px;
+
+	/*padding:10px 10px 10px 10px;*/
+	border-radius:100px;
+
+}
+
+
+/*Pseudo Class(:)*/
+.menutext:hover{
+	background-color:orange;
+	color:black;
+}
+
+.menutext:active{
+	color:red;
+}
+
+
+.imgdesign{
+	width:80px;
+	height:80px;
+	cursor: pointer;
+
+	
+}
+
+.imgdesign:hover{
+	width:100px;
+	height: 100px;
+
+	transition: 2s;
+
+}

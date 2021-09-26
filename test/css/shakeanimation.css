@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+body{
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	#fc0384
+}
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background: #eb4034;
+}
+.container .box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 180px;
+	height: 170px;
+	/*background: green;*/
+	position: relative;
+}
+.sound1{
+	position: absolute;
+	top: 5px;
+	left: 3px;
+	opacity: 0;
+	/*transform: rotate(90deg);*/
+}
+.sound2{
+	position: absolute;
+	top: 2px;
+	right: 3px;
+	opacity: 0;
+	/*transform: rotate(-90deg);*/
+}
+.alarmclock{
+	font-size: 150px;
+	color: blue;
+}
+.box:hover .alarmclock{
+	animation: shake .1s ease-in-out infinite;
+}
+.box:hover .sound1,
+.box:hover .sound2 {
+  opacity: 1;
+  animation: sound .1s ease-in-out infinite;
+}
+@keyframes shake{
+	0% {
+    	transform: rotate(-15deg);
+  	}
+  	100% {
+    	transform: rotate(15deg);
+  	}
+}
+@keyframes sound{
+	0% {
+    	transform: rotate(-5deg);
+  	}
+  	100% {
+    	transform: rotate(5deg);
+  	}
+}

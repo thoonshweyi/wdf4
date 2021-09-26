@@ -1,0 +1,24 @@
+.paragraph1::first-line{
+	color:blue;
+}
+
+.paragraph1::before{
+	content:"ABC";
+}
+
+.paragraph1::after{
+	content:" EFG";
+}
+
+
+.paragraph1::first-letter{
+	color:red;
+	font-size: 50px;
+}
+
+.paragraph1::selection{
+	background-color: orange;
+	color:#fff;
+}
+
+

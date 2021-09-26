@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Js Regular Function</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		// console.log("hay");
+
+		//Regular Function
+		// function name(){
+
+		// }
+		// name(); recall or invoke
+
+		// 1.Manual Function
+
+		// greet();
+		// function greet() {
+		// 	console.log("Hello Mandalay");
+		// }
+		// greet();
+		// greet();
+		// greet();
+
+		// function printalert(){
+		// 	window.alert("Hello Myanmar");
+		// }
+		// printalert();
+
+		function hello() {
+			return "Hello Yangon";
+		}
+		// hello();
+		// console.log(hello());
+		// window.alert(hello());
+		// document.write(hello());
+		function myfun1(city) {
+			console.log("Hello "+city);
+		}
+		myfun1("Mandalay");
+		myfun1("Yangon");
+		myfun1("Bago");
+		myfun1();
+
+		function myfun2(city="Yangon") {
+			console.log("Hello "+city);
+		}
+		myfun2("Mandalay");
+		myfun2();
+
+		function multifun1(x,y,z){
+			console.log(`x value is ${x} y value is ${y} z value is ${z}`)
+		}
+		multifun1(10,20,30,40);
+
+		function multifun2(x,y,z){
+			const result = x+y+z;
+			return result;
+		}
+		console.log(multifun2(10,20,30));
+
+		function multifun3(x,y,z=100) {
+			const result = x+y+z;
+			return result;
+		}
+		console.log(multifun3(10,20));
+
+		let num1=0;
+		let num2=1;
+		let num3=2;
+		function multifun4(a,b,c) {
+			console.log(`A value is ${a} , B value is ${b} , C value is ${c}`);
+		}
+		multifun4(num1,num2,num3);
+
+		//3.Name Less Function(Anonymous Functijon)
+
+		let annfun = function () {
+			document.write("My value is 100");
+		};
+		annfun();
+		let confun = new Function("a","b","c","return a+b+c");
+		console.log(confun(10,20,30));
+
+		// Seft Invoking Function
+		// IIFE
+
+		// Meghod1
+		let slfun12 = function(a){
+			document.write(`I am self invoking function , my value is ${a}`);
+		}(500);
+		// slfun12(20);
+		document.write("<br/>");
+		// Meghod2
+		(function(a){
+			document.write(`I am self invoking function , my value is ${a}`);
+		})(500);
+
+		// Using Function to Function
+
+		function funone(){
+			return "Hello World";
+		}
+		function funtwo(fun) {
+			return fun;
+		}
+		console.log(funtwo(funone()));
+
+		// Get function name(.name)
+		function fun1() {
+			return "Hello Mandalay";
+		}
+		function fun2(abc) {
+			console.log(abc.name);
+		}
+		fun2(fun1);
+
+		//To Be Continue
+	</script>
+</body>
+</html>

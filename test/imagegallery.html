@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Image Gallery</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 100%;
+			height: 100vh;
+		/*	display: flex;
+			justify-content: center;
+			align-items: center;*/
+			/*background: rgba(221, 221, 221, 1.0);*/
+			background-color: #0e104d;
+		}
+		.container .imgOne{
+			display: flex;
+			justify-content: center;
+			
+		}
+		.imgOne img{
+			margin-top: 20px;
+		}
+		.imgGallery{
+			width: 95%;
+			height: 200px;
+			/*border: 2px solid orange;*/
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin : 20px auto 0px auto;
+			position: relative;
+		}
+		.imgGallery img{
+			margin-left: 20px;
+			border: 10px solid #fff;
+			box-shadow: -2px -2px 10px #000;
+		}
+		.circles{
+			position: absolute;
+			bottom: 7px;
+			left : auto;
+
+		}
+		.circle{
+			width : 10px;
+			height: 10px;
+			background-color: white;
+			border-radius: 50%;
+			float: left;
+			margin-left: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="imgOne">
+			<img src="" id="imgShow" width="50%" height="400">
+		</div>
+		<div class="imgGallery">
+			<img src="./img/myanmar/myanmar1.jpg" width="150" height="120" class="imgs" />
+			<img src="./img/myanmar/myanmar2.jpg" width="150" height="120" class="imgs"/>
+			<img src="./img/myanmar/myanmar3.jpg" width="150" height="120" class="imgs"/>
+			<img src="./img/myanmar/myanmar4.jpg" width="150" height="120" class="imgs"/>
+			<img src="./img/myanmar/myanmar5.jpg" width="150" height="120" class="imgs"/>
+			<!-- <img src="./img/myanmar/myanmar6.jpg" width="150" height="120" class="imgs"/> -->
+			<!-- <img src="./img/myanmar/myanmar7.jpg" width="150" height="120" class="imgs"/> -->
+			<!-- <img src="./img/myanmar/myanmar8.jpg" width="150" height="120" class="imgs"/> -->
+			<!-- <img src="./img/myanmar/myanmar9.jpg" width="150" height="120" class="imgs"/> -->
+			<div class="circles">
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var imgShow = document.getElementById("imgShow");
+		var imgs = document.getElementsByClassName("imgs");
+
+		// console.log(typeof imgs);
+		// imgShow.src = imgs[2].src; 
+		// imgs.forEach(function(img){
+		// 	// imgShow.src = img.src;
+		// 	console.log(img.src)
+		// });\
+
+
+		// for(var i=0 ; i < imgs.length ; i++){
+			
+			// setTimeout((imgs)=>{
+			// 	console.log(imgs[i].src);
+			//  } , 3000);
+			// console.log(imgs[i].src);
+		// }
+
+		imgShow.src = imgs[2].src;
+		imgs[2].style.width = "160px";
+		imgs[2].style.height = "130px";
+		for(var i = 0 ; i < imgs.length ; i++){
+			if(i != 2){
+				imgs[i].style.opacity = "0.5";
+			}
+		}
+		function clickFun() {
+			imgShow.src = this.src;
+		}
+	</script>
+</body>
+</html>

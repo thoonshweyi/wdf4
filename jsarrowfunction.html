@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		Arrow function
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// console.log("hay");
+		// Regular Function
+		let regfun1 = function(num1){
+			return num1=60;
+		}
+		console.log(regfun1("This is regfun1 = ") + regfun1(50));
+
+		// Arrow Function(Single Parameter Function)
+
+		// Meghod 1
+		let arrfun1 = (num1)=>{
+			return num1};
+		 
+		console.log("This is arrfun1 = "+arrfun1(200));
+
+		// Meghod 2
+
+		let arrfun2 = num1=>{
+			return num1;
+		}
+		console.log("This is arrfun2 = "+arrfun2(300));
+
+		// Meghod 3
+		let arrfun3 = num1=>num1;
+		console.log("This is arrfun3 = "+arrfun3(300));
+	
+
+		// Arrow Function (Multi Parameter)
+
+		let multiarrfun1 = (num1,num2)=>{
+			const result = num1 + num2;
+			return result;
+		}
+		console.log("This is multiarrfun1 = "+multiarrfun1(10,20));
+
+		let wpfun1 = ()=>{
+			return "I Love Mandalay";
+		}
+		console.log("This is wpfun1 = " + wpfun1());
+		let wpfun2 = ()=> "I am from Mandalay";
+		console.log("This is wpfun2 = "+ wpfun2());
+	</script>
+</body>

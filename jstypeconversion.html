@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Js Type Conversion</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		let val;
+		// val = String(5);
+		// val=(5).toString();
+		
+		//Boolean to String
+		// val=String(false);
+		// val=false.toString();
+		// console.log(val);
+		// console.log(typeof val);
+
+		//Date to String
+		// val = String(new Date());
+		// console.log(val);
+		// console.log(typeof val);
+
+		//Array to String
+		// val =[100,200,300,400];
+		// val = String(val);
+		// val = val.toString();
+
+		// String to Number
+		val="5";
+		val = Number(val);
+		val = +val;
+
+		val="100.250";
+		val=Number("100.250");
+		val=+"100.250";
+		// val=parseInt("100.250");
+		val = parseFloat("100.250");
+
+
+		//Boolean to Number
+		val= true;
+		val = Number(false);
+
+		//String Number (NaN = not a number)
+		val="aung";
+		val=Number("aung");
+
+		//Array to Number(NaN = not a number)
+		val=[10,20,30];
+		val=Number(val);
+
+		val=200.123456789;
+
+		console.log(val);
+		console.log(typeof val);
+		console.log(val.toFixed(5));
+	</script>
+
+</body>
+</html>

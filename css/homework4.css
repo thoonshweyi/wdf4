@@ -1,0 +1,25 @@
+/**/
+body{
+	background-image: url(../img/homework4/background.jpg);
+	color: white;
+	background-size: cover;
+}
+.box{
+	font-size: 18px;
+	width: 350px;
+	height: 300px;
+	margin: 0px auto 50px;
+	border:2px dotted white;
+	text-align: justify;
+	background: rgba(127,127,127,0.4);
+	background-repeat: no-repeat;
+}
+.shadow{
+	text-shadow: -5px -3px 2px black;
+}
+.font{
+	font-family: 'Stick', sans-serif;
+}
+.yellow{
+	color: yellow;
+}

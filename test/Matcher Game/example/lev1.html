@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Level 1</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			background: linear-gradient(
+					45deg, 
+					#8fbad9,
+					#db81d8
+				);
+		}
+		.container{
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.gamePanel{
+			width: 300px;
+			height: 400px;
+			border: 2px solid red;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			background-color: rgba(31, 64, 118, 1.0);
+		}
+		.miniImg{
+			width: 50px;
+			height: 70px;
+			border: 1px solid blue;
+			position: absolute;
+			/*background-image: url('img/pizza-removebg.png');*/
+			background-position: center;
+			/*background-size: 50px;*/
+			background-repeat: no-repeat;
+			position: absolute;
+		}	
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="gamePanel">
+			<div class="miniImg" onclick="chosen(0)"></div>
+			<div class="miniImg" onclick="chosen(1)"></div>
+			<div class="miniImg" onclick="chosen(2)"></div>
+			<div class="miniImg" onclick="chosen(3)"></div>
+			<div class="miniImg" onclick="chosen(4)"></div>
+			<div class="miniImg" onclick="chosen(5)"></div>
+			<div class="miniImg" onclick="chosen(6)"></div>
+			<div class="miniImg" onclick="chosen(7)"></div>
+		</div>
+	</div>
+	<img src="./img/ojuice.jpg
+	" width="50" height="70"/>
+	<script type="text/javascript">
+		var click=0;
+		var chosenImg=[];
+		var chosenRc=[];
+			// var firstclickImg=null;
+			// var secondclickImg=null;
+		var items=document.getElementsByClassName("miniImg");
+		items[0].style.backgroundImage = "url(./img/bacon-removebg-preview.png)"
+		items[2].style.backgroundImage = "url(./img/orangeJuice-removebg-preview.png)"
+		items[4].style.backgroundImage = "url(./img/hamburger-removebg-preview.png)"
+		items[6].style.backgroundImage = "url(./img/pizza-removebg.png)"
+
+		items[1].style.backgroundImage = "url(./img/hamburger-removebg-preview.png)"
+		items[3].style.backgroundImage = "url(./img/pizza-removebg.png)"
+		items[5].style.backgroundImage = "url(./img/bacon-removebg-preview.png)"
+		items[7].style.backgroundImage = "url(./img/orangeJuice-removebg-preview.png)"
+		// console.log(items[0].style.backgroundImage);
+		var tp=20;
+		for(var i=0 ; i<=7 ; i+=2){
+			items[i].style.left = "30px";
+			items[i].style.top = ""+tp+"px";
+			tp+=90;
+		}
+		tp=20;
+		for(var i=1  ; i<=7 ; i+=2){
+			items[i].style.right = "30px";
+			items[i].style.top = ""+tp+"px";
+			tp+=90;
+		}
+		// function match(rc) {
+		// 	if(click==0){
+		// 		firstclickImg=items[rc].style.backgroundImage;
+		// 		click=1;
+		// 		items[rc].onclick ="";
+		// 		console.log(firstclickImg);
+		// 	}else if(click==1){
+		// 		// click=2;
+		// 		secondclickImg=items[rc].style.backgroundImage;
+		// 		console.log(secondclickImg);
+		// 		if(firstclickImg==secondclickImg){
+		// 			console.log("Match");
+		// 		}
+		// 		else{
+		// 			console.log("Not Match");
+		// 			// items[rc].onclick ="match("+rc+")";
+		// 		}
+		// 		click=0;
+		// 	}
+		// }
+		function chosen(rc) {
+			// body...
+			chosenImg.push(items[rc].style.backgroundImage);
+			chosenRc.push(rc);
+			console.log(chosenImg);
+			
+			if(chosenImg.length==2){
+				match(rc);
+			}
+		}
+		function match(rc) {
+			if(chosenImg[0] == chosenImg[1]){
+				console.log("Match");
+			}
+			else{
+				console.log("Not Match");
+				console.log(typeof chosenRc[0]+"  "+chosenRc[1])
+				items[chosenRc[0]].onclick= "chosen("+0+")";
+				items[chosenRc[1]].onclick= "chosen()";
+			}
+			chosenImg=[];
+			chosenRc=[];
+		}
+		
+	</script>
+</body>
+</html>

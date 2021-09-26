@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="icon" type="image/jpg" href="./img/profile/iconM.jpg">
+</head>
+<body>
+	<div class="container">
+		<div class="header"><h1>Match Game</h1></div>
+		<div class="levels">
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+			<div class="lev"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var l=document.getElementsByClassName("lev");
+		for(var i=0 ; i<l.length ; i++){
+			l[i].innerHTML = `<span>${i+1}</span>`;
+			l[i].setAttribute("id", i+1);
+			l[i].addEventListener("click", funClick , true);
+		}
+		function funClick() {
+			var id = this.getAttribute("id");
+			window.open("l"+id+".html","_self")
+		}
+	</script>
+</body>
+</html>

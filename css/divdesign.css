@@ -1,0 +1,99 @@
+/*Universal Selector*/
+*{
+	cursor:pointer;
+}
+
+.firstdiv{
+	width:200px;
+	height:100px;
+	color:green;
+	font-size:20px;
+	/*cursor: pointer;*/
+
+	background-color:rgba(232,26,59,1);
+	/*opacity:0;*/
+}
+
+.divtwo{
+	width:300px;
+	height: 300px;
+	/*cursor:pointer;*/
+	color:white;
+
+	/*border:2px;
+	border-style:solid;
+	border-color:red;*/
+
+	border:5px solid red;
+
+	background-image:url(../img/cover/bg1.jpg);
+	/*background-repeat: no-repeat;*/
+	/*background-repeat: repeat-x;*/
+	/*background-repeat: repeat-y;*/
+
+	background-position: center;
+}
+
+
+.divthree{
+	width: 300px;
+	height: 300px;
+	border:3px solid red;
+	font-size: 20px;
+	color:white;
+
+	/*background-image:linear-gradient(blue,orange,red,green);*/
+	/*background:linear-gradient(#3aa832,#9c1197);*/
+	/*background:linear-gradient(rgba(213,197,59,1.00),rgba(53,220,196,1.00));*/
+
+/*	background:linear-gradient(
+		60deg,
+		red,
+		green
+		);
+*/
+
+		/*background: radial-gradient(blue,orange,red);*/
+		/*background:radial-gradient(#3aa832,#9c1197);*/
+		/*background:radial-gradient(rgba(213,197,59,1.00),rgba(53,220,196,1.00));*/
+
+
+
+}
+
+
+.divfour{
+	width: 200px;
+	height: 300px;
+	font-size: 30px;
+	color:green;
+	/*background:linear-gradient(rgba(213,197,59,0.2),rgba(53,220,196,0.3)) , url(../img/cover/bg2.jpg);*/
+	background-repeat: no-repeat;
+
+	background:linear-gradient(
+		45deg,
+		rgba(213,197,59,0.3) 40% ,
+	 	rgba(225,225,225,0.2) 30%
+	 ),  url(../img/cover/bg2.jpg);
+}
+
+
+
+
+
+
+/*
+
+function
+name(value)
+
+single parameter function
+name(value)
+
+multi paratmer funciton
+name(value,value)
+
+*/
+
+
+/*25CDM WDFXXXXXX*/
