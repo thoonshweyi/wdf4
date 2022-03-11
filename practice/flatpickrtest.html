@@ -22,6 +22,9 @@
                 margin: 0;
                 padding: 0;
             }
+            a{
+                text-decoration: none;
+            }
             .choice{
                 list-style-type: none;
                 background-color: #fff;
@@ -35,13 +38,13 @@
                 /* background-color: tomato; */
                 /* text-align: center; */
                 border-right: 1px solid #999;
-                padding: 20px 50px;
+                padding: 20px 40px;
 
                 cursor: pointer;
 
                 position: relative;
             }
-            .choice-item:last-child{
+            .choice-item:nth-child(4){
                 border: 0;
             }
             .choice-title{
@@ -62,16 +65,13 @@
                 font-size: 14px;
                 text-transform: capitalize;  
             }
-            .choice-input:disabled{
-                background-color: transparent;
-            }
             .choice-input:focus{
                 outline: 0;
             }
             .choice-input::placeholder{
                 color: #555;
             }
-            .choice-menu{
+            .choice-menu,.choice-guest{
                 max-height: 160px;
                 background-color:#fff ;
                 border-radius: 15px;
@@ -84,12 +84,12 @@
                 overflow-y: auto;
                 overflow-x: hidden;
 
-                display: none;
+                opacity: 0;
             }
-            .choice-item.show .choice-menu{
-                display: block;
+            .choice-item.show .choice-menu,.choice-item.show .choice-guest{
+                opacity: 1;
             }
-            .choice-menu li{
+            .choice-menu li,.choice-guest li{
                 width: 170px;
                 height: 40px;
                 
@@ -100,6 +100,47 @@
             .choice-menu li:hover{
                 background-color: #eee;
             }
+
+            .guestbtn{
+                width: 30px;
+                height: 30px;
+                border: 1px solid #444;
+                border-radius: 50%;
+
+                cursor: pointer;
+
+                display: inline-block;
+                text-align: center;
+                line-height: 30px;
+            }
+            .guestnumber{
+                margin: 0 10px;
+            }
+            .choice-search{
+                /* background-color: #444; */
+                padding: 0 20px;
+                padding-left: 0;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .choice-search-btn{
+                width: 70px;
+                height: 70px;
+                background-color: skyblue;
+                border: 0;
+                border-radius: 50%;
+                color: #fff;
+                font-size: 24px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            button:focus{
+                outline: 0;
+            }
         </style>
     </head>
     <body>
@@ -109,7 +150,7 @@
             <ul class="choice">
                 <li class="choice-item" id="where">
                     <span class="choice-title"><i class="fas fa-map-marker"></i>Where To?</span>
-                    <input type="text" name="place" id="place" class="choice-input" placeholder="Where are you going">
+                    <input type="text" name="place" id="place" class="choice-input" placeholder="Where are you going" required autocomplete="off"/>
                     <ul class="choice-menu">
                         <li>Alaska</li>
                         <li>California</li>
@@ -118,22 +159,38 @@
                         <li>Seoul</li>
                     </ul>
                 </li>
-                <li class="choice-item flatpickr" id="when">
+                <li class="choice-item" id="when">
                     <span class="choice-title"><i class="fas fa-calendar"></i>When?</span>
-                    <input type="text" name="date" id="date" class="choice-input" placeholder="Select your time"/>
+                    <input type="text" name="date" id="date" class="choice-input" placeholder="Select your time" required/>
                 </li>
                 <li class="choice-item">
                     <span class="choice-title"><i class="fas fa-plane"></i>Travel Type</span>
-                    <input type="text" name="type" id="type" class="choice-input" placeholder="Select travel type">
+                    <input type="text" name="type" id="type" class="choice-input" placeholder="Select travel type" required autocomplete="off"/>
                     <ul class="choice-menu">
                         <li>Group Tour</li>
                         <li>Private Tour</li>
                     </ul>
                 </li>
-                <li class="choice-item" id="guest"><span class="choice-title"><i class="fas fa-user"></i>Guest</span><span class="choice-input">Select number of guest</span></li>
+                <li class="choice-item" id="guest">
+                    <span class="choice-title"><i class="fas fa-user"></i>Guest</span>
+                    <input type="text" name="guest" id="guestinput" class="choice-input" placeholder="Select number of guest" required autocomplete="off"/>
+                    <ul class="choice-guest" style="cursor: default;">
+                        <li style="display: block; height: 80px; text-align: center;">
+                            <span style="display: block; padding: 10px 0;">Adult</span>
+                            <a class="guestbtn minusbtn">-</a>
+                            <span class="guestnumber">0</span>
+                            <a class="guestbtn plusbtn">+</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="choice-search">
+                    <button type="submit" class="choice-search-btn"><i class="fas fa-search"></i></button>
+                </li>
             </ul>
         </form>
 
+        <!-- inspiration site -->
+        <!-- https://templates.envytheme.com/traip/default/index.html -->
         <!-- jquery -->
         <script src="../libs/jquery-3.6.0.min.js"></script>
         <!-- flatpickr css1 js1-->
@@ -144,9 +201,9 @@
                 // console.log('hay');
 
                 // code to show flatpickr calendar when click on li
-                $('#when').click(function(){
-                    $('#date').focus();
-                });
+                // $('#when').click(function(){
+                //     $('#date').focus();
+                // });
                 // add flatpickr to date
                 $('#date').flatpickr(
                     {
@@ -159,27 +216,68 @@
 
             const choiceitems = document.querySelectorAll('.choice-item');
 
-            const place = document.querySelector('#place');
-            const type = document.querySelector('#type');
+            const choiceinputs = document.querySelectorAll('.choice-input');
 
-            // const choicemenu = document.querySelectorAll('.choice-menu');
+            const choicemenuitems = document.querySelectorAll('.choice-menu li');
 
-            place.addEventListener('focus',()=>{
-                place.parentElement.classList.add('show');
-            });
-            place.addEventListener('blur',()=>{
-                place.parentElement.classList.remove('show');
+            // Event Listener for inputs
+            choiceinputs.forEach((choiceinput)=>{
+                choiceinput.addEventListener('focus',()=>choiceinput.parentElement.classList.add('show'));
+                choiceinput.addEventListener('blur',()=>choiceinput.parentElement.classList.remove('show'));
             });
 
-            type.addEventListener('focus',()=>type.parentElement.classList.add('show'));
-            type.addEventListener('blur',()=>type.parentElement.classList.remove('show'));
-
-
+            // Event Listener for choiceitems
             choiceitems.forEach((choiceitem)=>{
                 choiceitem.addEventListener('click',()=>{
                     choiceitem.querySelector('.choice-input').focus();
                 });
             })
+
+            // Event Listener for choicemenuitems(7)
+            choicemenuitems.forEach((choicemenuitem)=>{
+                choicemenuitem.addEventListener('click',()=>{
+                    // console.log(choicemenuitem);
+                    
+                    // add value to input
+                    choicemenuitem.parentElement.parentElement.querySelector('.choice-input').value = choicemenuitem.textContent;
+                });
+            });
+
+
+
+            const minusbtn = document.querySelector('.minusbtn'),
+                    plusbtn = document.querySelector('.plusbtn');
+            const guestnumberel = document.querySelector('.guestnumber');
+            const guestinput = document.querySelector('#guestinput');
+
+            minusbtn.addEventListener('click',(e)=>{
+               let current = parseInt(guestnumberel.textContent);
+                current--;
+
+                if(current > 0){
+                    guestnumberel.textContent = `${current}`;
+                    if(current === 1){
+                        guestinput.value = `${current} Guest`;
+                    }else{
+                        guestinput.value = `${current} Guests`;
+                    }
+                }else if(current === 0){
+                    guestnumberel.textContent = '0';
+                    guestinput.value = '';
+                }
+            });
+
+            plusbtn.addEventListener('click',(e)=>{
+               let current = parseInt(guestnumberel.textContent);
+               current++;
+               
+               guestnumberel.textContent = `${current}`;
+               if(current === 1){
+                guestinput.value = `${current} Guest`;
+               }else{
+                guestinput.value = `${current} Guests`;
+               }
+            });
         </script>
     </body>
 </html>

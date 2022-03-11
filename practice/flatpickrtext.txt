@@ -1,0 +1,3 @@
+'Flatpickr' is a library for date-time input element.'Flatpickr' show the date-time input element with beautiful calendar design.JQuery support 'flatpickr' library so we can use 'flatpickr' with jquery.
+
+'Yes.You can customize flatpickr'.Flatpickr let the user to customize the date and time setting such as dateformat,setting date-time range ,date-time disabled , etc...
